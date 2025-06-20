@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            padding: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border: 1px solid #ccc;
+            max-width: 700px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            margin-top: 30px;
+            color: #444;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        td {
+            padding: 8px 10px;
+            vertical-align: top;
+        }
+
+        td.label {
+            font-weight: bold;
+            width: 200px;
+            color: #333;
+            background-color: #f0f0f0;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 40px;
+            color: #777;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Hall Ticket</h1>
+        </div>
+
+        <div class="section-title">Candidate Details</div>
+        <table>
+            <tr><td class="label">Registration Number:</td><td th:text="${registrationId}"></td></tr>
+            <tr><td class="label">Name:</td><td th:text="${name}"></td></tr>
+            <tr><td class="label">Address:</td><td th:text="${address}"></td></tr>
+            <tr><td class="label">Email ID:</td><td th:text="${email}"></td></tr>
+        </table>
+
+        <div class="section-title">Exam Details</div>
+        <table>
+            <tr><td class="label">Program:</td><td th:text="${programName}"></td></tr>
+            <tr><td class="label">Test Centre:</td><td th:text="${testCentre}"></td></tr>
+            <tr><td class="label">Test Date:</td><td th:text="${testDate}"></td></tr>
+            <tr><td class="label">Exam Schedule:</td><td th:text="${examSchedule}"></td></tr>
+            <tr><td class="label">Reporting Time:</td><td th:text="${reportingTime}"></td></tr>
+            <tr><td class="label">Registration Date:</td><td th:text="${registrationDate}"></td></tr>
+        </table>
+
+        <div class="footer">
+            Please carry this hall ticket and a valid photo ID to the exam center. Late entries will not be allowed.
+        </div>
+    </div>
+</body>
+</html>
